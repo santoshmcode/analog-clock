@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Parisienne", cursive;
+}
+
+body {
+  background: linear-gradient(to right, #f857a6, #ff5858);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(250, 250, 250, 0.6);
+  border-radius: 50%;
+  border: 5px solid black;
+  position: relative;
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #000;
+  top: 50%;
+  left: 50%;
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 10;
+  background-color: black;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+.clock .hand.minute {
+  width: 7px;
+  height: 46%;
+}
+.clock .hand.hour {
+  width: 10px;
+  height: 30%;
+}
+
+.reverse {
+  --reverse: 0;
+  transform: rotate(var(--reverse));
+}
+/* placig the  numbers */
+.clock .number1 {
+  --rotation: 30deg;
+}
+.clock .number2 {
+  --rotation: 60deg;
+}
+.clock .number3 {
+  --rotation: 90deg;
+}
+.clock .number4 {
+  --rotation: 120deg;
+}
+.clock .number5 {
+  --rotation: 150deg;
+}
+.clock .number6 {
+  --rotation: 180deg;
+}
+.clock .number7 {
+  --rotation: 210deg;
+}
+.clock .number8 {
+  --rotation: 240deg;
+}
+.clock .number9 {
+  --rotation: 270deg;
+}
+.clock .number10 {
+  --rotation: 300deg;
+}
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+/* rotating it to position correctly */
+.number1 div {
+  --reverse: -30deg;
+}
+.number2 div {
+  --reverse: -60deg;
+}
+.number3 div {
+  --reverse: -90deg;
+}
+.number4 div {
+  --reverse: -120deg;
+}
+.number5 div {
+  --reverse: -150deg;
+}
+.number6 div {
+  --reverse: -180deg;
+}
+.number7 div {
+  --reverse: -210deg;
+}
+.number8 div {
+  --reverse: -240deg;
+}
+.number9 div {
+  --reverse: -270deg;
+}
+.number10 div {
+  --reverse: -300deg;
+}
+.number11 div {
+  --reverse: -330deg;
+}
